@@ -1,11 +1,11 @@
 from PyQt6.QtWidgets import QApplication, QWidget, QLineEdit, QPushButton, QVBoxLayout
 from PyQt6.QtCore import Qt
-import sys
-from selenium import webdriver 
 from selenium.webdriver.common.by import By
+from selenium import webdriver 
+from Sourсe.RandomUserData import *
 from time import sleep 
-from Sourse.RandomUserData import *
 
+import sys
 
 
 class Window(QWidget):
@@ -25,21 +25,22 @@ class Window(QWidget):
         button.clicked.connect(self.EnterUser)
         layout.addWidget(button)
 
-
-    
-
+    # Ввод данных пользователя на сайте.
     def EnterUser(self):
+        # Открытие браузера.
         driver = webdriver.Edge()
+        # Открытие ссылки.
         driver.get(self.input.text())
-        User = GenerateUser(self)
-        driver.find_element(By.NAME,"Name").send_keys(self.username) 
-        driver.find_element(By.NAME,"Email").send_keys(self.email) 
-        driver.find_element(By.NAME,"tildaspec-phone-part[]").send_keys(self.number) 
+        # Cоздание данных пользователя.
+        User = GenerateUser()
+        # Ввод данных пользователя в нужные поля.
+        driver.find_element(By.NAME,"Name").send_keys(GenerateUser.username) 
+        driver.find_element(By.NAME,"Email").send_keys(GenerateUser.email) 
+        driver.find_element(By.NAME,"tildaspec-phone-part[]").send_keys(GenerateUser.number)
+        # Нажатие кнопки. 
         driver.find_element(By.CLASS_NAME, "t-submit").click()
         sleep(10) 
     
-
-        
 
 app = QApplication(sys.argv)
 window = Window()
