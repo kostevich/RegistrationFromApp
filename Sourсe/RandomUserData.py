@@ -14,4 +14,3 @@ def GenerateUser():
     number = '+375' + random.choice(['24', '25', '29', '33', '44']) + str(random.randint(1000000,9999999))
     # Возвращает данные пользователя.
     return username, email, number
-
