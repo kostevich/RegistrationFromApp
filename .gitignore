@@ -1,6 +1,7 @@
-
-# Visual Studio project files.
-
+# Build data.
+/build
+/dist
+main.spec
 
 # Python cache.
 __pycache__
