@@ -18,8 +18,6 @@ class Window(QWidget):
         self.resize(400, 250)
         # Название приложения.
         self.setWindowTitle("GeNERation DaTa")
-        # Иконка приложения.
-        self.setWindowIcon(QtGui.QIcon("auth.ico"))
         # Фон приложения.
         layout = QVBoxLayout()
         self.setLayout(layout)
@@ -59,6 +57,8 @@ class Window(QWidget):
         
 # Создаем экземпляр класса.
 app = QApplication(sys.argv)
+# Иконка приложения.
+app.setWindowIcon(QtGui.QIcon("auth.ico"))
 # Создаем виджет.
 window = Window()
 # Открытие окна приложения.
