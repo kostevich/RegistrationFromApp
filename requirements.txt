@@ -1,4 +1,6 @@
-pyqt6
 Faker
-selenium
+git+https://github.com/DUB1401/dublib
 pyinstaller
+pyqt6
+selenium
+

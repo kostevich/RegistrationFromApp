@@ -1,7 +1,2 @@
-# Build data.
-/build
-/dist
-main.spec
-
-# Python cache.
-__pycache__
+# Program files
+build
